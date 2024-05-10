@@ -2,7 +2,7 @@
   <nav>
     <ul>
       @for (route of routes; track route) {
-        <li><a routerLink="{{route.path}}">{{route.name}} </a></li>
+        <li><a [routerLink]="[route.path]" routerLinkActive="active">{{route.name}}</a></li>
       }
     </ul>
     <img src="/assets/images/svg/world.svg" alt="world-image">
