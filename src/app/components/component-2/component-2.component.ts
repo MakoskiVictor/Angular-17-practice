@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-component-2',
@@ -10,4 +10,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class Component2Component {
 
+  counter = signal<number>(10)
+  squareCounter = computed(()=> this.counter() * this.counter())
+
+  changeBy(value: number){
+    this.counter.set(this.counter() + value)
+  }
 }

@@ -1,1 +1,9 @@
-<p>component-2 works!</p>
+<h1>Counter = {{counter()}} </h1>
+<br>
+<h2> Square Counter = {{squareCounter()}} </h2>
+
+<button (click)="counter.set(0)" >Reset</button>
+<br>
+<button (click)="changeBy(1)" >+1</button>
+<br>
+<button (click)="changeBy(-1)" >-1</button>
