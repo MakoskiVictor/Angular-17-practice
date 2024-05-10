@@ -11,4 +11,9 @@ import { RouterLink } from '@angular/router';
 })
 export class ToolbarComponent {
 
+  routes = [
+    { name: "Home", path: "" },
+    { name: "Component 1", path: "/page-1" },
+    { name: "Component 2", path: "/page-2" }
+  ]
 }

@@ -1,9 +1,9 @@
 <section>
   <nav>
     <ul>
-      <li><a routerLink="">Home</a></li>
-      <li><a routerLink="/page-1">Component 1</a></li>
-      <li><a routerLink="/page-2">Component 2</a></li>
+      @for (route of routes; track route) {
+        <li><a routerLink="{{route.path}}">{{route.name}} </a></li>
+      }
     </ul>
     <img src="/assets/images/svg/world.svg" alt="world-image">
   </nav>
