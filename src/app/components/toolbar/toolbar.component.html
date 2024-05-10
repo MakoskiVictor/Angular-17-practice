@@ -1,7 +1,7 @@
 <section>
   <nav>
     <ul>
-      @for (route of routes; track route) {
+      @for (route of routes(); track route) {
         <li><a [routerLink]="[route.path]" routerLinkActive="active">{{route.name}}</a></li>
       }
     </ul>
