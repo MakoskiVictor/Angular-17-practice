@@ -4,7 +4,7 @@ import { Observable, map, tap } from 'rxjs';
 import type { User, UserApiData } from '../models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersServiceService {
 
@@ -13,8 +13,9 @@ export class UsersServiceService {
   constructor(private httpClient: HttpClient) { }
 
   getUserApiById (id: number): Observable<User> {
+    console.log("INGESO A USER SERVICES", id)
     return this.httpClient.get<UserApiData>(`${this.BASE_URL}/${id}`).pipe(
-      map(response => response.user),
+      map(response => response.data),
       tap(console.log)
     )
   }
