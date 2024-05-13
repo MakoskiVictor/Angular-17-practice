@@ -1,6 +1,6 @@
 <section>
   <h1>User ID: {{userId()}} </h1>
-  @if (currentUser()) {
+  @if (userWasFound()) {
 
     <div>
       <p>Name: {{currentUser()?.first_name}} </p>
