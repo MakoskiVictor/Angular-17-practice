@@ -1,1 +1,18 @@
-<p>user-get works!</p>
+<section>
+  <h1>User ID: {{userId()}} </h1>
+  @if (currentUser()) {
+
+    <div>
+      <p>Name: {{currentUser()?.first_name}} </p>
+      <p>Email: {{currentUser()?.email}} </p>
+      <img [src]="currentUser()?.avatar" alt="user-img">
+    </div>
+  } @else {
+    <p>User not found</p>
+  }
+
+  <br>
+  <button (click)="changeUser(-1)" >Prev User</button>
+  <br>
+  <button (click)="changeUser(1)" >Next User</button>
+</section>
