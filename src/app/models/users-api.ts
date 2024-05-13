@@ -1,5 +1,5 @@
 export interface UserApiData {
-  user: User;
+  data: User;
   support: Support;
 }
 
