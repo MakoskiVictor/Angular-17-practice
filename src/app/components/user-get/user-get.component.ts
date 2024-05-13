@@ -16,7 +16,7 @@ export class UserGetComponent implements OnInit {
 
   userId = signal(10)
   currentUser: WritableSignal<User | undefined> = signal<User | undefined>(undefined);
-  userWasFound = signal(true)
+  userWasFound = signal(false)
 
 
   ngOnInit(): void {
@@ -25,10 +25,13 @@ export class UserGetComponent implements OnInit {
 
   loadUser(id: number) {
     this.currentUser.set(undefined)
-    this.userServices.getUserApiById(id).subscribe(
-      user => {
+    this.userServices.getUserApiById(id).subscribe({
+      next: (user) => {
         this.currentUser.set(user)
-      })
+        this.userWasFound.set(true)
+      },
+      error: ()=> this.userWasFound.set(false)
+    })
     }
 
   changeUser (num: number) {
